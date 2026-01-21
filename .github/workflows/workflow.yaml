@@ -46,3 +46,4 @@ jobs:
           url: https://test
           version: 1.0.0
           label: "Default commit"
+
