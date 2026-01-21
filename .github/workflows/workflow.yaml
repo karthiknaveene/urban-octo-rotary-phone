@@ -30,13 +30,6 @@ jobs:
           echo "This is a scheduled run every 5 minutes."
           # Your actual commands can go here, like tests, builds, etc.
 
-      - name: register-artifact-default-commit
-        uses: cloudbees-io-gha/register-build-artifact@v3
-        with:
-          name: test
-          url: https://test
-          version: 1.0.0
-          label: "Default commit"
 
       - name: register-artifact-commit
         uses: cloudbees-io-gha/register-build-artifact@v3
@@ -47,4 +40,12 @@ jobs:
           label: "User Commit"
           commit: "2ce229fabe7d7d0da1237eeae01602655b819ef5"
           repository-url: "https://github.com/karthiknaveene/super-duper-octo-telegram/"
-          ref: "ref/heads/main"
+          ref: "main"
+
+      - name: register-artifact-default-commit
+        uses: cloudbees-io-gha/register-build-artifact@v3
+        with:
+          name: test
+          url: https://test
+          version: 1.0.0
+          label: "Default commit"
