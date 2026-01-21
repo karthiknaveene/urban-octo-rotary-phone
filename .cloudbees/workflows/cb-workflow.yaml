@@ -15,7 +15,7 @@ jobs:
         uses: cloudbees-io/register-build-artifact@v2
         id: register
         with:
-          name: "myApp"
+          name: "CB-BRANCH"
           url: "docker.io/myapp/myimg:1.0.0"
           version: "1.0.0"
           repository-url: "https://github.com/karthiknaveene/ideal-disco"
@@ -26,7 +26,7 @@ jobs:
         uses: cloudbees-io/register-build-artifact@v2
         id: register-1
         with:
-          name: "myApp"
+          name: "CB-BRANCH-DEFAULT"
           url: "docker.io/myapp/myimg:1.0.0"
           version: "1.0.0"
           labels: "Default"
