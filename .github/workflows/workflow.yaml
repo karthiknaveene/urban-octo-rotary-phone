@@ -38,9 +38,9 @@ jobs:
           url: https://hub.docker.com/repository/docker/hackers
           version: 1.0.0
           label: User Commit
-          commit: 01539735a702575dd28ee5c172fa771e5708d2d0
+          commit: aefc34c03a01fdbaa3e8ec6e7cde9e6cd9d070de
           repository-url: https://github.com/karthiknaveene/ideal-disco
-          ref: refs/heads/main
+          ref: refs/heads/testing
 
       - name: register-artifact-default-commit
         uses: cloudbees-io-gha/register-build-artifact@v3
