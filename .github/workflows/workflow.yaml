@@ -40,7 +40,7 @@ jobs:
           label: User Commit
           commit: 01539735a702575dd28ee5c172fa771e5708d2d0
           repository-url: https://github.com/karthiknaveene/ideal-disco
-          ref: main
+          ref: refs/heads/main
 
       - name: register-artifact-default-commit
         uses: cloudbees-io-gha/register-build-artifact@v3
