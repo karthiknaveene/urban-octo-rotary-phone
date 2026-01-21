@@ -1,10 +1,11 @@
 apiVersion: automation.cloudbees.io/v1alpha1
 kind: workflow
 name: My workflow
-
 on:
   workflow_dispatch:
-
+  pull_request:
+    branches:
+      - main
 jobs:
   build:
     steps:
@@ -15,20 +16,18 @@ jobs:
         uses: cloudbees-io/register-build-artifact@v2
         id: register
         with:
-          name: "myApp"
-          url: "docker.io/myapp/myimg:1.0.0"
-          version: "1.0.0"
-          repository-url: "https://github.com/karthiknaveene/ideal-disco"
-          commit: "01539735a702575dd28ee5c172fa771e5708d2d0"
-          ref: "refs/heads/main"
-          labels: "User Defined"
+          name: myApp
+          url: docker.io/myapp/myimg:1.0.0
+          version: 1.0.0
+          repository-url: https://github.com/karthiknaveene/ideal-disco
+          commit: 01539735a702575dd28ee5c172fa771e5708d2d0
+          ref: refs/heads/main
+          labels: User Defined
       - name: Default commit
         uses: cloudbees-io/register-build-artifact@v2
         id: register
         with:
-          name: "myApp"
-          url: "docker.io/myapp/myimg:1.0.0"
-          version: "1.0.0"
-          labels: "Default"
-          
-          
+          name: myApp
+          url: docker.io/myapp/myimg:1.0.0
+          version: 1.0.0
+          labels: Default
