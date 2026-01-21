@@ -1,0 +1,44 @@
+name: New
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  
+
+
+jobs:
+  run-scheduled-task:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: Run some scheduled task
+        run: |
+          echo "This is a scheduled run every 5 minutes."
+          # Your actual commands can go here, like tests, builds, etc.
+
+      - name: register-artifact-default-commit
+        uses: cloudbees-io-gha/register-build-artifact@v3
+        with:
+          name: test
+          url: https://test
+          version: 1.0.0
+          label: "Default commit"
+
+      - name: register-artifact-commit
+        uses: cloudbees-io-gha/register-build-artifact@v3
+        with:
+          name: manavt-Docker-artifact
+          url: https://hub.docker.com/repository/docker/hackers
+          version: 1.0.0
+          label: "User Commit"
+          commit: "2ce229fabe7d7d0da1237eeae01602655b819ef5"
+          repository-url: "https://github.com/karthiknaveene/super-duper-octo-telegram/"
+          ref: "main"
