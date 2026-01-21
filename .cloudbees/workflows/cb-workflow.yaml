@@ -8,9 +8,8 @@ on:
       - "main"
 
 jobs:
-  build:
-    steps:
-    - name: Default commit
+   register_build_artifact:
+      name: Default commit
       uses: cloudbees-io/register-build-artifact@v2
       with:
         name: "myApp"
@@ -18,9 +17,9 @@ jobs:
         version: "1.0.0",
         type: "docker"
 
-  build-1:
-    steps:
-      - name: User commit
+   register_build_artifact_user:
+      name: User commit
+      uses: cloudbees-io/register-build-artifact@v2
         uses: cloudbees-io/register-build-artifact@v2
         with:
           name: "myApp"
