@@ -41,4 +41,4 @@ jobs:
           label: "User Commit"
           commit: "2ce229fabe7d7d0da1237eeae01602655b819ef5"
           repository-url: "https://github.com/karthiknaveene/super-duper-octo-telegram/"
-          ref: "main"
+          ref: "ref/heads/main"
