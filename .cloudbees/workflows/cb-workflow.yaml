@@ -25,7 +25,7 @@ jobs:
           labels: User Defined
       - name: Default commit
         uses: cloudbees-io/register-build-artifact@v2
-        id: register
+        id: register-1
         with:
           name: myApp
           url: docker.io/myapp/myimg:1.0.0
