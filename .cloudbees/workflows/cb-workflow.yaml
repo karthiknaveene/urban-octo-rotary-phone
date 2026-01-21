@@ -3,30 +3,28 @@ kind: workflow
 name: My workflow
 
 on:
-  push:
-    branches:
-      - "main"
+  workflow_dispatch:
 
 jobs:
-   register_build_artifact:
-      name: Default commit
-      uses: cloudbees-io/register-build-artifact@v2
-      with:
-        name: "myApp"
-        url: "docker.io/myapp/myimg:1.0.0"
-        version: "1.0.0",
-        type: "docker"
-
-   register_build_artifact_user:
-      name: User commit
-      uses: cloudbees-io/register-build-artifact@v2
+  build:
+    steps:
+      - name: Checkout
+        uses: cloudbees-io/checkout@v1
+        id: checkout
+      - name: Register an artifact with the CloudBees Unify
         uses: cloudbees-io/register-build-artifact@v2
+        id: register
         with:
           name: "myApp"
           url: "docker.io/myapp/myimg:1.0.0"
-          version: "1.0.0",
-          type: "docker"
-          repository-url: "https://github.com/karthiknaveene/ideal-disco",
-          commit: "01539735a702575dd28ee5c172fa771e5708d2d0",
-          ref: "refs/heads/main",
+          version: "1.0.0"
+          repository-url: "https://github.com/karthiknaveene/ideal-disco"
+          commit: "01539735a702575dd28ee5c172fa771e5708d2d0"
+          ref: "refs/heads/main"
+      - name: Print output parameter artifact ID
+        uses: docker://alpine:latest
+        shell: sh
+        run: |
+          echo "artifact ID for myApp:${{ cloudbees.version }} is: ${{ steps.register.outputs.artifact-id }}"
+          
           
