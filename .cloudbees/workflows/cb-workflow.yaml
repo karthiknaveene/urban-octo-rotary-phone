@@ -26,7 +26,7 @@ jobs:
           url: "docker.io/myapp/myimg:1.0.0"
           version: "1.0.0",
           type: "docker"
-          "repository-url": "https://github.com/karthiknaveene/ideal-disco",
-          "commit": "01539735a702575dd28ee5c172fa771e5708d2d0",
-          "ref": "refs/heads/main",
+          repository-url: "https://github.com/karthiknaveene/ideal-disco",
+          commit: "01539735a702575dd28ee5c172fa771e5708d2d0",
+          ref: "refs/heads/main",
           
