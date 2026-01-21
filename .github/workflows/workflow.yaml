@@ -35,9 +35,9 @@ jobs:
           url: https://hub.docker.com/repository/docker/hackers
           version: 1.0.0
           label: "User Commit"
-          commit: "2ce229fabe7d7d0da1237eeae01602655b819ef5"
-          repository-url: "https://github.com/karthiknaveene/super-duper-octo-telegram/"
-          ref: "main"
+          commit: "01539735a702575dd28ee5c172fa771e5708d2d0"
+          repository-url: "https://github.com/karthiknaveene/ideal-disc"
+          ref: "ref/heads/main"
 
       - name: register-artifact-default-commit
         uses: cloudbees-io-gha/register-build-artifact@v3
