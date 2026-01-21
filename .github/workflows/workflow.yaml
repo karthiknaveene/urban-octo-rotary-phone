@@ -30,6 +30,14 @@ jobs:
           echo "This is a scheduled run every 5 minutes."
           # Your actual commands can go here, like tests, builds, etc.
 
+      - name: register-artifact-default-commit
+        uses: cloudbees-io-gha/register-build-artifact@v3
+        with:
+          name: test
+          url: https://test
+          version: 1.0.0
+          label: Default commit
+
       - name: register-artifact-commit
         uses: cloudbees-io-gha/register-build-artifact@v3
         with:
@@ -42,13 +50,7 @@ jobs:
           ref: refs/heads/testing
 
 
-      - name: register-artifact-default-commit
-        uses: cloudbees-io-gha/register-build-artifact@v3
-        with:
-          name: test
-          url: https://test
-          version: 1.0.0
-          label: Default commit
+      
 
 
 
