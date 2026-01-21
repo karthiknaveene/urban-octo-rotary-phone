@@ -33,7 +33,7 @@ jobs:
       - name: register-artifact-default-commit
         uses: cloudbees-io-gha/register-build-artifact@v3
         with:
-          name: test
+          name: GHA-PR-TAG-DEFAULT
           url: https://test
           version: 1.0.0
           label: Default commit
@@ -41,7 +41,7 @@ jobs:
       - name: register-artifact-commit
         uses: cloudbees-io-gha/register-build-artifact@v3
         with:
-          name: manavt-Docker-artifact
+          name: GHA-PR-TAG
           url: https://hub.docker.com/repository/docker/hackers
           version: 1.0.0
           label: User Commit
