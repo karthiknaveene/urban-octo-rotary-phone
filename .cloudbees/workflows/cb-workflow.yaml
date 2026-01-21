@@ -10,20 +10,24 @@ on:
 jobs:
   build:
     steps:
-      - name: Say hello
-        uses: docker://golang:1.20.3-alpine3.17
-        shell: sh
-        run: |
-          sleep 3
-          echo "hello world"
+    - name: Default commit
+      uses: cloudbees-io/register-build-artifact@v2
+      with:
+        name: "myApp"
+        url: "docker.io/myapp/myimg:1.0.0"
+        version: "1.0.0",
+        type: "docker"
 
   build-1:
     steps:
-      - name: Say hello
-        uses: docker://golang:1.20.3-alpine3.17
-        shell: sh
-        run: |
-          sleep 6
-          echo "hello world"
-          exit 1
+      - name: User commit
+        uses: cloudbees-io/register-build-artifact@v2
+        with:
+          name: "myApp"
+          url: "docker.io/myapp/myimg:1.0.0"
+          version: "1.0.0",
+          type: "docker"
+          "repository-url": "https://github.com/karthiknaveene/ideal-disco",
+          "commit": "01539735a702575dd28ee5c172fa771e5708d2d0",
+          "ref": "refs/heads/main",
           
