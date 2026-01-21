@@ -11,8 +11,6 @@ on:
       - main        
   workflow_dispatch:
 
-  
-
 
 jobs:
   run-scheduled-task:
